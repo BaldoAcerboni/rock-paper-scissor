@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
 </head>
 <body>
     <h1>you vs the machine, best of 5:<br> who'll win?</h1>
-    <button class="btn">rock</button>
-    <button class="btn">paper</button>
-    <button class="btn">scissor</button>
-    <button id="retry">RETRY</button>
-    <p id="round-result-message"></p>
-    <p id="partial-score"></p>
+    <div id="round-msg-container">
+        <p id="partial-score"></p>
+        <p id="round-result-message"></p>
+    </div>
+    <div id="btn-container">
+        <button class="btn">rock</button>
+        <button class="btn">paper</button>
+        <button class="btn">scissor</button>
+    </div>
+    <div id="retry-container">
+        <p id="game-over-msg"></p>
+        <button id="retry">RETRY</button>
+    </div>
+    
 </body>
 </html>

@@ -1,9 +1,11 @@
 const possibleChoice = ['rock', 'paper', 'scissor'];
 const buttons = document.getElementsByClassName('btn');
-const retry = document.getElementById('retry');
-let roundResultMessage = document.getElementById('round-result-message');
+const retryBtn = document.getElementById('retry');
+const roundResultMessage = document.getElementById('round-result-message');
 const partialScoreMessage = document.getElementById('partial-score');
-let totalScoreCount = 0;
+const gameOverMessage = document.getElementById('game-over-msg');
+const gameOverContainer = document.getElementById('retry-container')
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -11,6 +13,8 @@ let computerScore = 0;
 for(let button of buttons) {
     button.addEventListener('click', playRound)
 }
+
+retryBtn.addEventListener('click', retry)
 
 function getComputerChoice() {
     return possibleChoice[Math.floor(Math.random() * 3)];
@@ -57,12 +61,24 @@ function playGame() {
         return; 
     } else {
         if(playerScore === 3) {
-        partialScoreMessage.textContent = 'Congratulations you won!!!try again?'
+            gameOverMessage.textContent = 'Congratulations you won!!!try again?'
         } else if(computerScore === 3) {
-            partialScoreMessage.textContent = 'You lost! Try again?'
+            gameOverMessage.textContent = 'You lost! Try again?'
         }
         for(let button of buttons) {
             button.removeEventListener('click', playRound)
         }
+        gameOverContainer.style.display = 'flex';
     }
+}
+
+function retry() {
+    for(let button of buttons) {
+        button.addEventListener('click', playRound)
+    }
+    gameOverContainer.style.display = 'none';
+    playerScore = 0;
+    computerScore = 0;
+    partialScoreMessage.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+    roundResultMessage.textContent = '';
 }
