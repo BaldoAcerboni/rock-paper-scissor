@@ -16,14 +16,11 @@ function checkWin(user, computer) {
   updateScore();
   if (user === computer) {
     result.textContent = "It is a draw";
-    console.log("draw");
   } else if (user === "rock") {
     if (computer === "paper") {
       result.textContent = "Computer wins the round";
       updateScore(1);
-      console.log("computer");
     } else if (computer === "scissor") {
-      console.log("user wins");
       result.textContent = "User wins the round";
       updateScore(0);
     }
@@ -31,21 +28,17 @@ function checkWin(user, computer) {
     if (computer === "rock") {
       result.textContent = "User wins the round";
       updateScore(0);
-      console.log("user wins");
     } else if (computer === "scissor") {
       result.textContent = "Computer wins the round";
       updateScore(1);
-      console.log("the way of the machine");
     }
   } else {
     if (computer === "rock") {
       result.textContent = "Computer wins the round";
       updateScore(1);
-      console.log("the way of the machine");
     } else if (computer === "paper") {
       result.textContent = "User wins the round";
       updateScore(0);
-      console.log("user wins");
     }
   }
   handsPlayed.textContent = `User: ${user}, Computer: ${computer}`;
@@ -58,9 +51,11 @@ function updateScore(n) {
   scorePara.textContent = `User`;
   if (score[n] === 2) {
     if (n === 0) {
-      scorePara.textContent = "User wins the game";
+      scorePara.textContent = `User wins the game 
+      SCORE: User: ${score[0]} Computer: ${score[1]}`;
     } else {
-      scorePara.textContent = "Computer wins the game";
+      scorePara.textContent = `Computer wins the game 
+      SCORE: User: ${score[0]} Computer: ${score[1]}`;
     }
     score = [0, 0];
   } else {
