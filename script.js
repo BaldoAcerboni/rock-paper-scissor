@@ -65,15 +65,15 @@ function updateScore(n) {
 
 rockBtn.addEventListener("click", () => {
   userHand = "rock";
-  checkWin(randomChoice(), userHand);
+  checkWin(userHand, randomChoice());
 });
 
 paperBtn.addEventListener("click", () => {
   userHand = "paper";
-  checkWin(randomChoice(), userHand);
+  checkWin(userHand, randomChoice());
 });
 
 scissorBtn.addEventListener("click", () => {
   userHand = "scissor";
-  checkWin(randomChoice(), userHand);
+  checkWin(userHand, randomChoice());
 });

@@ -17,12 +17,16 @@ body {
   background: #070063;
 }
 
+.user-choice div {
+  overflow: hidden;
+}
+
 button {
   padding: 10px 20px;
   color: #06032c;
   background: #fff;
   border: 2px solid #fff;
-  border-radius: 5px;
+  border-radius: 2rem;
 }
 
 button:active {
